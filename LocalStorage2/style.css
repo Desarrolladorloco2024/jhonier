@@ -1,0 +1,212 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #ab47bc; /* A vibrant purple */
+    --secondary-color: #8e24aa; /* A darker purple for hover */
+    --accent-pink: #f8bbd0; /* A soft pink */
+    --light-blue: #bbdefb; /* A light blue */
+    --text-color: #4a4a4a;
+    --white: #ffffff;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-dark: rgba(0, 0, 0, 0.2);
+}
+
+body {
+    font-family: 'Poppins', 'Noto Sans JP', sans-serif;
+    background: linear-gradient(135deg, var(--accent-pink) 0%, var(--light-blue) 100%);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to the top, not center vertically */
+    min-height: 100vh;
+    color: var(--text-color);
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px var(--shadow-dark);
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 50px; /* Space from the top */
+    margin-bottom: 50px; /* Space from the bottom */
+}
+
+h1 {
+    color: var(--primary-color);
+    font-size: 2.8em;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px var(--shadow-light);
+}
+
+h2 {
+    color: var(--secondary-color);
+    font-size: 1.8em;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--accent-pink);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.input-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+input[type="text"] {
+    padding: 12px 18px;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    font-size: 1.1em;
+    outline: none;
+    transition: all 0.3s ease;
+    width: calc(50% - 10px); /* Adjust width for two inputs side-by-side */
+    max-width: 300px;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+input[type="text"]:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 10px rgba(171, 71, 188, 0.4);
+}
+
+input::placeholder {
+    color: #a0a0a0;
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 12px 25px;
+    margin: 5px;
+    border-radius: 10px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px var(--shadow-light);
+    min-width: 120px;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px var(--shadow-dark);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px var(--shadow-light);
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: var(--white);
+    border-radius: 10px;
+    overflow: hidden; /* Ensures rounded corners apply to content */
+    box-shadow: 0 5px 20px var(--shadow-light);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.95em;
+    letter-spacing: 0.5px;
+}
+
+tr:nth-child(even) {
+    background-color: #fcf4f8; /* A very light pink */
+}
+
+tr:hover {
+    background-color: #f0e6f2; /* A slightly darker light pink/purple */
+    transition: background-color 0.2s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    input[type="text"] {
+        width: 100%; /* Full width on smaller screens */
+        max-width: none;
+    }
+
+    .button-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    button {
+        width: 80%; /* Make buttons take more width */
+        max-width: 250px;
+    }
+
+    th, td {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    button {
+        padding: 10px 15px;
+        font-size: 1em;
+    }
+}
