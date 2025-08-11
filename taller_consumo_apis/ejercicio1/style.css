@@ -1,0 +1,15 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.photo-card {
+  width: 200px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+.photo-card img {
+  width: 100%;
+  height: auto;
+}
