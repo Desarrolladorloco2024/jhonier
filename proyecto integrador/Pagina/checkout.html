@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra - Ají Don José</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/checkout.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header class="header">
+        <div class="menu container">
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="productos.html">PRODUCTOS</a></li>
+                    <li><a href="carrito.html" class="cart-link">
+                        CARRITO DE COMPRAS
+                        <span class="cart-count">0</span>
+                    </a></li>
+                    <li><a href="../formulario login.html" class="login-btn">INICIAR SESIÓN</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="checkout-section">
+        <div class="container">
+            <h1 class="checkout-title">FINALIZAR COMPRA</h1>
+            
+            <div class="checkout-container">
+                <!-- Formulario de información -->
+                <div class="checkout-form">
+                    <section class="info-section">
+                        <h2 class="section-title">INFORMACIÓN DE ENVÍO</h2>
+                        <form id="checkout-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="nombre">NOMBRE</label>
+                                    <input type="text" id="nombre" name="nombre" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="correo">CORREO ELECTRÓNICO</label>
+                                    <input type="email" id="correo" name="correo" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="telefono">TELÉFONO</label>
+                                    <input type="tel" id="telefono" name="telefono" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label for="direccion">DIRECCIÓN COMPLETA</label>
+                                <input type="text" id="direccion" name="direccion" required>
+                            </div>
+                        </form>
+                    </section>
+
+                    <section class="payment-section">
+                        <h2 class="section-title">MÉTODO DE PAGO</h2>
+                        <div class="payment-options">
+                            <div class="payment-option">
+                                <input type="radio" id="tarjeta" name="metodo-pago" value="tarjeta" checked>
+                                <label for="tarjeta" class="payment-option-label">
+                                    <i class='bx bx-credit-card'></i>
+                                    TARJETA DE CRÉDITO/DÉBITO
+                                </label>
+                            </div>
+                            
+                            <div class="payment-option">
+                                <input type="radio" id="efectivo" name="metodo-pago" value="efectivo">
+                                <label for="efectivo" class="payment-option-label">
+                                    <i class='bx bx-money'></i>
+                                    PAGO EN EFECTIVO
+                                </label>
+                            </div>
+                        </div>
+
+                        <div id="tarjeta-fields" class="card-details">
+                            <div class="form-group">
+                                <label for="card-number">NÚMERO DE TARJETA</label>
+                                <input type="text" id="card-number" name="card-number" maxlength="16" placeholder="1234 5678 9012 3456">
+                            </div>
+                            <div class="form-group">
+                                <label for="card-expiry">FECHA DE VENCIMIENTO</label>
+                                <input type="text" id="card-expiry" name="card-expiry" placeholder="MM/AA">
+                            </div>
+                            <div class="form-group">
+                                <label for="card-cvv">CVV</label>
+                                <input type="text" id="card-cvv" name="card-cvv" maxlength="3">
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Resumen del pedido -->
+                <div class="order-summary">
+                    <div class="order-summary-header">
+                        <h2 class="order-summary-title">TU PEDIDO</h2>
+                        <a href="carrito.html" class="edit-link">EDITAR</a>
+                    </div>
+
+                    <div class="order-items">
+                        <!-- Los items se cargarán dinámicamente aquí -->
+                    </div>
+
+                    <div class="summary-items">
+                        <div class="summary-item">
+                            <span>Subtotal</span>
+                            <span id="checkout-subtotal">$0</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>IVA (19%)</span>
+                            <span id="checkout-iva">$0</span>
+                        </div>
+                        <div class="summary-item shipping">
+                            <span>Envío</span>
+                            <span id="checkout-envio">Gratis</span>
+                        </div>
+                        <div class="summary-item total">
+                            <span>Total</span>
+                            <span id="checkout-total">$0</span>
+                        </div>
+                    </div>
+
+                    <div class="promo-code">
+                        <button class="promo-code-button">
+                            <i class='bx bx-tag'></i>
+                            USA UN CÓDIGO PROMOCIONAL
+                        </button>
+                    </div>
+
+                    <button type="submit" class="confirm-button">
+                        Confirmar Pedido
+                        <i class='bx bx-check'></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <div class="link-img">
+                    <img src="./img/logo.png" alt="">
+                    <div class="socials-2">
+                        <a href="https://www.facebook.com"><img src="./img/Facebook.png" alt=""></a>
+                        <a href="https://www.instagram.com/"><img src="./img/Instagram.webp" alt=""></a>
+                        <a href="https://accounts.google.com"><img src="./img/Gmail.webp" alt=""></a>
+                    </div>
+                </div>
+                <div class="link">
+                    <h3>Línea atención al cliente</h3>
+                    <ul>
+                        <li>3013924099</li>
+                    </ul>
+                </div>
+                <div class="link">
+                    <h3>Oficina Principal</h3>
+                    <ul>
+                        <li>Cra6 #55 H-05</li>
+                    </ul>
+                </div>
+                <div class="link">
+                    <h3>Gmail</h3>
+                    <ul>
+                        <li>julianprograma12@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/carrito.js"></script>
+    <script src="./js/checkout.js"></script>
+</body>
+</html> 

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Cuenta - Ají Don José</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header class="header">
+        <div class="menu container">
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="productos.html">PRODUCTOS</a></li>
+                    <li><a href="dashboard.html" class="active">MI CUENTA</a></li>
+                    <li><a href="../formulario login.html" class="login-btn" id="logout-btn">CERRAR SESIÓN</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="dashboard-section">
+        <div class="container">
+            <h1 class="dashboard-title">MI CUENTA</h1>
+            
+            <div class="dashboard-grid">
+                <!-- Panel de Información Personal -->
+                <div class="dashboard-panel">
+                    <h2>
+                        <i class='bx bxs-user-circle'></i>
+                        INFORMACIÓN PERSONAL
+                    </h2>
+                    <div class="panel-content">
+                        <div class="user-info">
+                            <p><strong>Nombre:</strong> <span id="user-name"></span></p>
+                            <p><strong>Email:</strong> <span id="user-email"></span></p>
+                            <p><strong>Cliente desde:</strong> <span id="user-since"></span></p>
+                        </div>
+                        <button class="edit-profile-btn">
+                            <i class='bx bxs-edit'></i>
+                            Editar Perfil
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Panel de Pedidos -->
+                <div class="dashboard-panel">
+                    <h2>
+                        <i class='bx bxs-package'></i>
+                        MIS PEDIDOS
+                    </h2>
+                    <div class="panel-content">
+                        <div class="orders-list">
+                            <p class="no-orders">No tienes pedidos recientes</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel de Favoritos -->
+                <div class="dashboard-panel">
+                    <h2>
+                        <i class='bx bxs-heart'></i>
+                        MIS FAVORITOS
+                    </h2>
+                    <div class="panel-content">
+                        <div class="favorites-grid">
+                            <p class="no-favorites">No tienes productos favoritos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <div class="link-img">
+                    <img src="./img/logo.png" alt="">
+                    <div class="socials-2">
+                        <a href="https://www.facebook.com"><img src="./img/Facebook.png" alt=""></a>
+                        <a href="https://www.instagram.com/"><img src="./img/Instagram.webp" alt=""></a>
+                        <a href="https://accounts.google.com"><img src="./img/Gmail.webp" alt=""></a>
+                    </div>
+                </div>
+                <div class="link">
+                    <h3>Línea atención al cliente</h3>
+                    <ul>
+                        <li>3013924099</li>
+                    </ul>
+                </div>
+                <div class="link">
+                    <h3>Oficina Principal</h3>
+                    <ul>
+                        <li>Cra6 #55 H-05</li>
+                    </ul>
+                </div>
+                <div class="link">
+                    <h3>Gmail</h3>
+                    <ul>
+                        <li>julianprograma12@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/orders.js"></script>
+    <script src="./js/dashboard.js"></script>
+</body>
+</html> 

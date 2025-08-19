@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - Ají Don José</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/admin.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header class="header">
+        <div class="menu container">
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="productos.html">PRODUCTOS</a></li>
+                    <li><a href="admin.html" class="active">ADMINISTRACIÓN</a></li>
+                    <li><a href="../formulario login.html" class="login-btn">CERRAR SESIÓN</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="admin-section">
+        <div class="container">
+            <h1 class="admin-title">PANEL DE ADMINISTRACIÓN</h1>
+            
+            <div class="admin-grid">
+                <!-- Panel de Inventario -->
+                <div class="admin-panel">
+                    <h2><i class='bx bx-package'></i> Gestión de Inventario</h2>
+                    <div class="panel-content">
+                        <div class="search-add-container">
+                            <div class="search-container">
+                                <input type="text" placeholder="Buscar productos..." class="search-input" id="inventory-search">
+                            </div>
+                            <button class="add-button" id="add-product">
+                                <i class='bx bx-plus'></i> Agregar Producto
+                            </button>
+                        </div>
+                        <div class="table-container">
+                            <table class="inventory-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Producto</th>
+                                        <th>Categoría</th>
+                                        <th>Precio</th>
+                                        <th>Stock</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="inventory-body">
+                                    <!-- Se llenará dinámicamente con JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel de Usuarios -->
+                <div class="admin-panel">
+                    <h2><i class='bx bx-user'></i> Gestión de Usuarios</h2>
+                    <div class="panel-content">
+                        <div class="search-add-container">
+                            <div class="search-container">
+                                <input type="text" placeholder="Buscar usuarios..." class="search-input" id="users-search">
+                            </div>
+                            <button class="add-button" id="add-user">
+                                <i class='bx bx-plus'></i> Agregar Usuario
+                            </button>
+                        </div>
+                        <div class="table-container">
+                            <table class="users-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Usuario</th>
+                                        <th>Email</th>
+                                        <th>Rol</th>
+                                        <th>Estado</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="users-body">
+                                    <!-- Se llenará dinámicamente con JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal para Agregar/Editar Producto -->
+    <div class="modal" id="product-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="product-modal-title">Agregar Producto</h2>
+            <form id="product-form">
+                <div class="form-group">
+                    <label for="product-name">Nombre del Producto</label>
+                    <input type="text" id="product-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-category">Categoría</label>
+                    <select id="product-category" required>
+                        <option value="picante">Picante</option>
+                        <option value="dulce">Dulce</option>
+                        <option value="especial">Especial</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="product-price">Precio</label>
+                    <input type="number" id="product-price" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-stock">Stock</label>
+                    <input type="number" id="product-stock" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-description">Descripción</label>
+                    <textarea id="product-description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="product-image">Imagen</label>
+                    <input type="file" id="product-image" accept="image/*">
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="save-button">Guardar</button>
+                    <button type="button" class="cancel-button">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para Agregar/Editar Usuario -->
+    <div class="modal" id="user-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="user-modal-title">Agregar Usuario</h2>
+            <form id="user-form">
+                <div class="form-group">
+                    <label for="user-name">Nombre de Usuario</label>
+                    <input type="text" id="user-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="user-email">Email</label>
+                    <input type="email" id="user-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="user-password">Contraseña</label>
+                    <input type="password" id="user-password">
+                </div>
+                <div class="form-group">
+                    <label for="user-role">Rol</label>
+                    <select id="user-role" required>
+                        <option value="admin">Administrador</option>
+                        <option value="user">Usuario</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="save-button">Guardar</button>
+                    <button type="button" class="cancel-button">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <div class="link-img">
+                    <img src="./img/logo.png" alt="">
+                    <div class="socials-2">
+                        <a href="https://www.facebook.com"><img src="./img/Facebook.png" alt=""></a>
+                        <a href="https://www.instagram.com/"><img src="./img/Instagram.webp" alt=""></a>
+                        <a href="https://accounts.google.com"><img src="./img/Gmail.webp" alt=""></a>
+                    </div>
+                </div>
+                <div class="link">
+                    <h3>Línea atención al cliente</h3>
+                    <ul>
+                        <li>3013924099</li>
+                    </ul>
+                </div>
+                <div class="link">
+                    <h3>Oficina Principal</h3>
+                    <ul>
+                        <li>Cra6 #55 H-05</li>
+                    </ul>
+                </div>
+                <div class="link">
+                    <h3>Gmail</h3>
+                    <ul>
+                        <li>julianprograma12@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/admin.js"></script>
+</body>
+</html> 

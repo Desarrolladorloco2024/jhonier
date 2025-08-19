@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito - Ají Don José</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/carrito.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header class="header">
+        <div class="menu container">
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="productos.html">PRODUCTOS</a></li>
+                    <li><a href="carrito.html" class="cart-link active">
+                        CARRITO DE COMPRAS
+                        <span class="cart-count"></span>
+                    </a></li>
+                    <li><a href="../formulario login.html" class="login-btn">INICIAR SESIÓN</a></li>
+                    <li><a href="admin.html" class="admin-btn">ADMINISTRADOR</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="cart-section">
+        <div class="container">
+            <h1 class="cart-title">Carrito de Compras</h1>
+            
+            <div class="empty-cart">
+                <i class='bx bx-cart'></i>
+                <p>Tu carrito está vacío</p>
+                <a href="productos.html" class="continue-shopping">Continuar comprando</a>
+            </div>
+
+            <div class="cart-container">
+                <div class="cart-items">
+                    <!-- Los items se cargarán dinámicamente aquí -->
+                </div>
+
+                <div class="cart-summary">
+                    <h2>Resumen de la Compra</h2>
+                    <div class="summary-item">
+                        <span>Subtotal</span>
+                        <span id="subtotal">$0</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>IVA (19%)</span>
+                        <span id="iva">$0</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Envío</span>
+                        <span id="envio">$5.000</span>
+                    </div>
+                    <div class="summary-item total">
+                        <span>Total</span>
+                        <span id="total">$0</span>
+                    </div>
+                    <button id="checkout-btn" class="checkout-btn" disabled>
+                        Proceder al pago
+                        <i class='bx bx-right-arrow-alt'></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <div class="link-img">
+                    <img src="./img/logo.png" alt="">
+                    <div class="socials-2">
+                        <a href="https://www.facebook.com"><img src="./img/Facebook.png" alt=""></a>
+                        <a href="https://www.instagram.com/"><img src="./img/Instagram.webp" alt=""></a>
+                        <a href="https://accounts.google.com"><img src="./img/Gmail.webp" alt=""></a>
+                    </div>
+                </div>
+                <div class="link">
+                    <h3>Línea atención al cliente</h3>
+                    <ul>
+                        <li>3013924099</li>
+                    </ul>
+                </div>
+                <div class="link">
+                    <h3>Oficina Principal</h3>
+                    <ul>
+                        <li>Cra6 #55 H-05</li>
+                    </ul>
+                </div>
+                <div class="link">
+                    <h3>Gmail</h3>
+                    <ul>
+                        <li>julianprograma12@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/carrito.js"></script>
+</body>
+</html> 

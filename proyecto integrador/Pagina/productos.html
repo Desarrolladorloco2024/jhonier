@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Ají Don José</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/productos.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header class="header">
+        <div class="menu container">
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="productos.html" class="active">PRODUCTOS</a></li>
+                    <li><a href="carrito.html" class="cart-link">
+                        CARRITO DE COMPRAS
+                        <span class="cart-count">0</span>
+                    </a></li>
+                    <li><a href="../formulario login.html" class="login-btn">INICIAR SESIÓN</a></li>
+                    <li><a href="admin.html" class="admin-btn">ADMINISTRADOR</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="products-section">
+        <div class="container">
+            <h1 class="products-title">NUESTROS PRODUCTOS</h1>
+            
+            <div class="products-header">
+                <div class="search-container">
+                    <input type="text" placeholder="Buscar productos..." class="search-input">
+                </div>
+                <div class="filter-container">
+                    <select class="filter-select">
+                        <option value="todos">Todos los productos</option>
+                        <option value="picante">Picantes</option>
+                        <option value="dulce">Dulces</option>
+                        <option value="especial">Especiales</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="products-grid">
+                <!-- Los productos se cargarán dinámicamente desde JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <div class="link-img">
+                    <img src="./img/logo.png" alt="">
+                    <div class="socials-2">
+                        <a href="https://www.facebook.com"><img src="./img/Facebook.png" alt=""></a>
+                        <a href="https://www.instagram.com/"><img src="./img/Instagram.webp" alt=""></a>
+                        <a href="https://accounts.google.com"><img src="./img/Gmail.webp" alt=""></a>
+                    </div>
+                </div>
+                <div class="link">
+                    <h3>Línea atención al cliente</h3>
+                    <ul>
+                        <li>3013924099</li>
+                    </ul>
+                </div>
+                <div class="link">
+                    <h3>Oficina Principal</h3>
+                    <ul>
+                        <li>Cra6 #55 H-05</li>
+                    </ul>
+                </div>
+                <div class="link">
+                    <h3>Gmail</h3>
+                    <ul>
+                        <li>julianprograma12@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/carrito.js"></script>
+    <script src="./js/productos.js"></script>
+</body>
+</html> 

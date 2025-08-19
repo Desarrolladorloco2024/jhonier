@@ -1,0 +1,322 @@
+.dashboard-section {
+    padding: 40px 20px;
+    min-height: calc(100vh - 200px);
+    background-color: #f5f5f5;
+}
+
+.dashboard-title {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dashboard-panel {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.dashboard-panel:hover {
+    transform: translateY(-5px);
+}
+
+.dashboard-panel h2 {
+    background: #ff7675;
+    color: white;
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.8em;
+    text-transform: uppercase;
+}
+
+.dashboard-panel h2 i {
+    font-size: 2em;
+}
+
+.panel-content {
+    padding: 30px;
+    min-height: 200px;
+}
+
+/* Estilos para la información del usuario */
+.user-info {
+    color: #2d3436;
+}
+
+.user-info p {
+    margin: 15px 0;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-info strong {
+    min-width: 140px;
+    color: #636e72;
+}
+
+.edit-profile-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #74b9ff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 25px;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.edit-profile-btn:hover {
+    background: #0984e3;
+    transform: scale(1.02);
+}
+
+/* Estilos para la lista de pedidos */
+.orders-list {
+    min-height: 200px;
+}
+
+/* Estilos para la cuadrícula de favoritos */
+.favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    min-height: 150px;
+}
+
+/* Estilos para las notificaciones */
+.notifications-list {
+    min-height: 150px;
+}
+
+/* Mensajes de "no hay datos" */
+.no-orders,
+.no-favorites,
+.no-notifications {
+    text-align: center;
+    color: #b2bec3;
+    font-style: italic;
+    padding: 40px 0;
+    font-size: 1.1em;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .dashboard-title {
+        font-size: 2em;
+    }
+
+    .dashboard-panel h2 {
+        font-size: 1.5em;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dashboard-panel {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Ajustes adicionales para los iconos */
+.dashboard-panel:nth-child(1) h2 { background-color: #ff7675; }
+.dashboard-panel:nth-child(2) h2 { background-color: #74b9ff; }
+.dashboard-panel:nth-child(3) h2 { background-color: #ff7675; }
+.dashboard-panel:nth-child(4) h2 { background-color: #74b9ff; }
+
+/* Estilos para las tarjetas de pedidos */
+.order-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.order-card:hover {
+    transform: translateY(-2px);
+}
+
+.order-header {
+    padding: 15px 20px;
+    background: #f8f9fa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.order-number {
+    font-weight: bold;
+    color: #2d3436;
+}
+
+.order-date {
+    color: #636e72;
+}
+
+.order-status {
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.order-status.pendiente {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.order-status.completado {
+    background: #d4edda;
+    color: #155724;
+}
+
+.order-status.cancelado {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.order-status.enviado {
+    background: #cce5ff;
+    color: #004085;
+}
+
+.order-items {
+    padding: 20px;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.item-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.item-details {
+    flex: 1;
+}
+
+.item-details h4 {
+    margin: 0 0 5px 0;
+    color: #2d3436;
+}
+
+.item-details p {
+    margin: 3px 0;
+    color: #636e72;
+    font-size: 0.9em;
+}
+
+.order-footer {
+    padding: 15px 20px;
+    background: #f8f9fa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #e9ecef;
+}
+
+.order-total {
+    font-weight: bold;
+    color: #2d3436;
+    font-size: 1.1em;
+}
+
+.cancel-order-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.cancel-order-btn:hover {
+    background: #c82333;
+}
+
+/* Ajuste para el panel de pedidos */
+.orders-list {
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.orders-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.orders-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.orders-list::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.orders-list::-webkit-scrollbar-thumb:hover {
+    background: #555;
+} 
